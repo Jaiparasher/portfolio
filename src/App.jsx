@@ -10,7 +10,7 @@ import WorkExperience from './sections/Experience'
 
 const App = () => {
   return (
-    <div className="bg-[url('/assets/Background.svg')] bg-contain bg-no-repeat">
+    <div className="bg-[url('/assets/Background.svg')] lg:bg-contain bg-inherit bg-no-repeat">
     <main className="max-w-7xl mx-auto" > 
       <Navbar />
       <Hero />
