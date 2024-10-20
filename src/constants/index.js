@@ -39,7 +39,6 @@ export const navLinks = [
     {
       id: 1,
       name: 'Harsh Vardhan',
-      position: 'Analyst at Pentland Brands',
       img: 'assets/review1.jpeg',
       review:
       "Jai Parasher is an exceptional developer with strong skills in both frontend and backend technologies. His problem-solving approach, adaptability, and passion for creating seamless, scalable applications make him a valuable asset to any team.",
@@ -55,7 +54,6 @@ export const navLinks = [
     {
       id: 3,
       name: 'Rishabh K',
-      position: 'Software Engineer at Mantika',
       img: 'assets/review3.png',
       review:
         "Jai's expertise in JavaScript, React, Node.js, and MongoDB has significantly improved our project outcomes. He communicates clearly, meets deadlines, and collaborates effortlessly with the team. Jai’s dedication to understanding client needs makes him a dependable and valuable partner.",

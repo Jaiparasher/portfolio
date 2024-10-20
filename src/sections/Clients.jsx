@@ -21,7 +21,7 @@ const Clients = () => {
                     <img src={item.img} alt="reviewer" className="w-12 h-12 rounded-full" />
                     <div className="flex flex-col">
                       <p className="font-semibold">{item.name}</p>
-                      <p className="text-gray-500 md:text-base text-sm font-light">{item.position}</p>
+                      {item.position&&<p className="text-gray-500 md:text-base text-sm font-light">{item.position}</p>}
                     </div>
                   </div>
 
