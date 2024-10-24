@@ -30,7 +30,7 @@ export const navLinks = [
     ],
     github: "https://github.com/Jaiparasher",
     resume:
-      "https://drive.google.com/file/d/1-GXI0g2pdz-6ZCbKSuhgYfJCIR0wqomV/view?usp=sharing",
+      "https://drive.google.com/file/d/121Mpwd5ozgdGh-QgFF75MdFcOO-2Wtmb/view?usp=sharing",
     linkedin: "https://www.linkedin.com/in/jaiparasher/",
     leetcode: "https://leetcode.com/u/jaiparasher30/",
   };
