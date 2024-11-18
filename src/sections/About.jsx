@@ -204,10 +204,12 @@ const About = () => {
                 ))}
               </div>
             </div>
-            <div className="desktopPhoto Contact border-black-300 bg-black-200 absolute w-full h-full flex justify-center items-center">
+            <div className="desktopPhoto Contact overflow-hidden border-black-300 bg-black-200 absolute w-full h-full flex justify-center">
+            <div className="mt-96"></div>
             <Globe
-                height={456}
-                width={456}
+            className="mt-80"
+                height={1056}
+                width={1056}
                 backgroundColor="rgba(0, 0, 0, 0)"
                 backgroundImageOpacity={0.5}
                 ref={globeEl}
