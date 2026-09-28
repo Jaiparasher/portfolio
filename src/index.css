@@ -97,7 +97,7 @@ body {
   }
 
   .project-list-item {
-    @apply group flex w-full items-center gap-4 rounded-xl border border-transparent px-4 py-5 text-left text-neutral-400 transition-all duration-200 hover:border-white/10 hover:bg-white/[0.03] hover:text-white;
+    @apply flex w-full items-center gap-4 rounded-xl border border-transparent px-4 py-5 text-left text-neutral-400 transition-all duration-200 hover:border-white/10 hover:bg-white/[0.03] hover:text-white;
   }
 
   .project-list-item-active {
@@ -213,6 +213,39 @@ body {
     rgba(255, 255, 255, 0.000025) 50%,
     rgba(255, 255, 255, 0.025) 100%
   );
+}
+
+.hero-grid {
+  overflow: hidden;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 20% 15% auto;
+  height: 18rem;
+  border-radius: 999px;
+  background: rgba(184, 255, 90, 0.08);
+  filter: blur(80px);
+}
+
+.hero-orbit {
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  width: min(52vw, 42rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(184, 255, 90, 0.18);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-18deg) scaleY(0.32);
+}
+
+.hero-orbit-two {
+  transform: translate(-50%, -50%) rotate(35deg) scaleY(0.32);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 @keyframes wave-animation {
