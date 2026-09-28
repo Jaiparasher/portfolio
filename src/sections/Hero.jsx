@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useMediaQuery } from 'react-responsive';
 import { PerspectiveCamera } from '@react-three/drei';
+import Typewriter from 'typewriter-effect';
 import Button from '../components/Button.jsx';
 import CanvasLoader from '../components/Loading.jsx';
 import HeroCamera from '../components/HeroCamera.jsx';
@@ -26,7 +27,13 @@ const Hero = () => {
         </p>
         <div className="font-semibold text-blue-500 text-xl  gap-3  text-center sm:text-3xl sm:leading-10 mb-0 sm:mb-4">
           <span>
-            <span>{Bio.roles[0]}</span>
+            <Typewriter
+              options={{
+                strings: Bio.roles,
+                autoStart: true,
+                loop: true,
+              }}
+            />
           </span>
         </div>
       </div>
