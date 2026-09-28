@@ -1,6 +1,14 @@
+import { Suspense, useState } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+
+import Developer from '../components/Developer.jsx';
+import CanvasLoader from '../components/Loading.jsx';
 import { workExperiences } from '../constants/index.js';
 
 const WorkExperience = () => {
+  const [animationName, setAnimationName] = useState('idle');
+
   return (
     <section className="c-space my-20" id="work">
       <div className="w-full text-white-600">
@@ -8,11 +16,17 @@ const WorkExperience = () => {
         <hr className="rounded-4xl border-2 border-[#0140CB] sm:w-96 w-80"/>
 
         <div className="work-container">
-          <div className="work-canvas flex min-h-72 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-[#15191c] via-[#0b0c0d] to-[#b8ff5a]/10 p-8">
-            <div className="text-center">
-              <span className="mb-4 block text-7xl font-semibold text-[#b8ff5a]/20">{`</>`}</span>
-              <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">Building useful things</p>
-            </div>
+          <div className="work-canvas">
+            <Canvas>
+              <ambientLight intensity={7} />
+              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+              <directionalLight position={[10, 10, 10]} intensity={1} />
+              <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
+
+              <Suspense fallback={<CanvasLoader />}>
+                <Developer position-y={-3} scale={3} animationName={animationName} />
+              </Suspense>
+            </Canvas>
           </div>
 
           <div className="work-content">
@@ -20,6 +34,9 @@ const WorkExperience = () => {
               {workExperiences.map((item, index) => (
                 <div
                   key={index}
+                  onClick={() => setAnimationName(item.animation.toLowerCase())}
+                  onPointerOver={() => setAnimationName(item.animation.toLowerCase())}
+                  onPointerOut={() => setAnimationName('idle')}
                   className="work-content_container group">
                   <div className="flex flex-col h-full justify-start items-center py-2">
                     <div className="work-content_logo">
