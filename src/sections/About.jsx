@@ -114,7 +114,6 @@ import Globe from "react-globe.gl";
 import "../index.css"; 
 import Button from './../components/Button';
 import { Bio, skills } from "../constants";
-import * as THREE from '//unpkg.com/three/build/three.module.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
