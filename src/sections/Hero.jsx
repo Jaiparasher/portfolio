@@ -25,7 +25,9 @@ const Hero = () => {
           Hi, I am Jai Parasher <span className="waving-hand">👋</span>
         </p>
         <div className="font-semibold text-blue-500 text-xl  gap-3  text-center sm:text-3xl sm:leading-10 mb-0 sm:mb-4">
-          <span>{Bio.roles[0]}</span>
+          <span>
+            <span>{Bio.roles[0]}</span>
+          </span>
         </div>
       </div>
 
