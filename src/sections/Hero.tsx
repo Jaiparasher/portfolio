@@ -1,7 +1,6 @@
 import { Leva } from 'leva';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { useMediaQuery } from 'react-responsive';
 import { PerspectiveCamera } from '@react-three/drei';
 import Typewriter from 'typewriter-effect';
 import Button from '@/components/Button';
@@ -10,18 +9,31 @@ import HeroCamera from '@/components/HeroCamera';
 import { Bio, calculateSizes } from '@/constants/index';
 import { HackerRoom } from '@/components/HackerRoom';
 
-const Hero = () => {
-  // Use media queries to determine screen size
-  const isSmall = useMediaQuery({ maxWidth: 440 });
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+const useViewportFlags = () => {
+  const [width, setWidth] = useState(0);
 
+  useEffect(() => {
+    const updateWidth = () => setWidth(window.innerWidth);
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
+  return {
+    isSmall: width > 0 && width <= 440,
+    isMobile: width > 0 && width <= 768,
+    isTablet: width > 0 && width > 768 && width <= 1024,
+  };
+};
+
+const Hero = () => {
+  const { isSmall, isMobile, isTablet } = useViewportFlags();
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
   return (
     // position={[2,-3,0]} rotation={[0.1, -1.4, 0]}
     <section className="min-h-screen w-full flex flex-col relative" id="home">
-      <div className="w-full mx-auto flex flex-col  sm:mt-36 mt-20 c-space gap-3">
+      <div className="relative z-10 w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 pointer-events-none">
         <p className="sm:text-3xl text-xl font-medium text-white text-center ">
           Hi, I am Jai Parasher <span className="waving-hand">👋</span>
         </p>
