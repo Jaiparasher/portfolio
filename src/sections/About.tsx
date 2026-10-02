@@ -1,7 +1,7 @@
 // import { useState } from 'react';
 // import Globe from 'react-globe.gl';
 
-// import Button from '../components/Button.jsx';
+// import Button from '@/components/Button';
 
 // const About = () => {
 //   const [hasCopied, setHasCopied] = useState(false);
@@ -111,10 +111,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Globe from "react-globe.gl";
-import "../index.css"; 
+ 
 import Button from './../components/Button';
 import { Bio, skills } from "../constants";
-import * as THREE from '//unpkg.com/three/build/three.module.js';
+import * as THREE from '//unpkg.com/three/build/three.module';
 
 gsap.registerPlugin(ScrollTrigger);
 

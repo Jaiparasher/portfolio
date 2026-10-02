@@ -4,11 +4,11 @@ import { Canvas } from '@react-three/fiber';
 import { useMediaQuery } from 'react-responsive';
 import { PerspectiveCamera } from '@react-three/drei';
 import Typewriter from 'typewriter-effect';
-import Button from '../components/Button.jsx';
-import CanvasLoader from '../components/Loading.jsx';
-import HeroCamera from '../components/HeroCamera.jsx';
-import { Bio, calculateSizes } from '../constants/index.js';
-import { HackerRoom } from '../components/HackerRoom.jsx';
+import Button from '@/components/Button';
+import CanvasLoader from '@/components/Loading';
+import HeroCamera from '@/components/HeroCamera';
+import { Bio, calculateSizes } from '@/constants/index';
+import { HackerRoom } from '@/components/HackerRoom';
 
 const Hero = () => {
   // Use media queries to determine screen size
