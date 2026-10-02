@@ -4,7 +4,6 @@ import { Canvas } from '@react-three/fiber';
 import { useMediaQuery } from 'react-responsive';
 import { PerspectiveCamera } from '@react-three/drei';
 import Button from '../components/Button.jsx';
-import CanvasLoader from '../components/Loading.jsx';
 import HeroCamera from '../components/HeroCamera.jsx';
 import { Bio, calculateSizes } from '../constants/index.js';
 import { HackerRoom } from '../components/HackerRoom.jsx';
@@ -31,7 +30,7 @@ const Hero = () => {
 
       <div className="w-full h-full absolute inset-0">
         <Canvas className="w-full h-full">
-          <Suspense fallback={<CanvasLoader />}>
+          <Suspense fallback={null}>
             {/* To hide controller */}
             <Leva hidden />
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
